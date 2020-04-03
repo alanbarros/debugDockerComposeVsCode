@@ -4,9 +4,18 @@
         {
             "label": "Install Vsdbg",
             "type": "shell",
+            "dependsOn": "Dotnet restore",
             "command": "if [ ! -e ../vsdbg/ ]; then curl -sSL https://aka.ms/getvsdbgsh | /bin/sh /dev/stdin -v latest -l ../vsdbg; fi",
             "windows":{
                 "command": "powershell .\\.vscode\\script.ps1"
+            }
+        },        
+        {
+            "label": "Dotnet restore",
+            "type": "shell",
+            "command": "dotnet restore ./src/debugDockerComposeVsCode.sln",
+            "windows":{
+                "command": "dotnet restore .\\src\\debugDockerComposeVsCode.sln"
             }
         }
     ]
