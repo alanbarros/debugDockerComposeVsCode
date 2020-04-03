@@ -1,11 +1,66 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "application/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/application.dll": {}
+        }
+      },
+      "domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/domain.dll": {}
+        }
+      },
+      "infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/infrastructure.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "application/1.0.0": {
+      "type": "project",
+      "path": "../application/application.csproj",
+      "msbuildProject": "../application/application.csproj"
+    },
+    "domain/1.0.0": {
+      "type": "project",
+      "path": "../domain/domain.csproj",
+      "msbuildProject": "../domain/domain.csproj"
+    },
+    "infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../infrastructure/infrastructure.csproj",
+      "msbuildProject": "../infrastructure/infrastructure.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "infrastructure >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\alanb\\.nuget\\packages\\": {},
@@ -36,7 +91,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Projetos\\debugDockerComposeVsCode\\src\\infrastructure\\infrastructure.csproj": {
+              "projectPath": "D:\\Projetos\\debugDockerComposeVsCode\\src\\infrastructure\\infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
