@@ -10,8 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using webapi.Extensions;
 
-namespace debugDockerComposeVsCode
+namespace webapi
 {
     public class Startup
     {
@@ -26,6 +27,7 @@ namespace debugDockerComposeVsCode
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDependencies();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

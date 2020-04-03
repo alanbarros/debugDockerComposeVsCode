@@ -1,6 +1,6 @@
 using System;
 
-namespace debugDockerComposeVsCode
+namespace domain
 {
     public class WeatherForecast
     {
