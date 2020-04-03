@@ -1,12 +1,12 @@
 version: '3.7'
 
 services:
-  webapi-service:
-    container_name: container-webapi
-    image: webapi-service
+  grpc-service:
+    container_name: container-grpc
+    image: grpc-service
     build:
       context: .
-      dockerfile: webapi/vscode.dockerfile
+      dockerfile: grpcServer/vscode.dockerfile
       target: debug
     environment:
       CONN_STRING: "Falta definir"
@@ -14,7 +14,7 @@ services:
       - ../src:/src
       - ../../:/root/debug    
     ports:
-      - 8007:5000
+      - 8008:5000
     networks:
       - debugando-no-container 
 
